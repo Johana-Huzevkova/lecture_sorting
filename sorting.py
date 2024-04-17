@@ -40,17 +40,26 @@ def selection_sort(number_list, direction="vzestupne"):
 
 def bubble_sort(number_list):
     for idx in range(len(number_list) - 1):
-        for i in range(0, idx):
+        i = 0
+        while i < len(number_list) - 1:
             if number_list[i] > number_list[i + 1]:
                 number_list[i], number_list[i + 1] = number_list[i + 1], number_list[i]
+            i += 1
 
     return number_list
+
+
+# def insertion_sort(number_list):
+#     sorted_i = 0
+#     for idx in range(len(number_list)):
+#         unsorted_i =
 
 
 def main():
     numbers = read_data("numbers.csv")
     sort_selection = selection_sort(numbers["series_1"], "vzestupne")
-    sort_bubble = bubble_sort(numbers["series_2"])
+    sort_bubble = bubble_sort(numbers["series_3"])
+    # sort_insertion = insertion_sort(numbers["series_3"])
     print(sort_bubble)
 
 
